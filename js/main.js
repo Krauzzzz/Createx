@@ -56,6 +56,13 @@ $(function () {
       $(this).addClass('program__acc-link--active')
       $(this).children('.program__acc-text').slideDown()
     }
+})
 
+  $(".header__nav-list a, .header__top-btn, .footer__go-top, .footer__item-link--nav, .footer__logo").on("click",  function (e) {
+    e.preventDefault()
+    var id = $(this).attr('href'),
+    top = $(id).offset().top;
+    $('body,html').animate({ scrollTop: top }, 800)
   })
+
 })
